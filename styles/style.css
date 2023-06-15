@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+:root {
+   --first-element-summary: hsl(0, 100%, 67%);
+   --second-element-sumary: hsl(39, 100%, 56%);
+   --third-element-sumary: hsl(166, 100%, 37%);
+   --fourth-element-sumary: hsl(234, 85%, 45%);
+   --background-first-block: hsl(252, 100%, 67%);
+   --background-first-block-gradient: hsl(241, 81%, 54%);
+   --background-circle: hsl(241, 81%, 54%);
+   --background-circle-button: hsla(241, 72%, 46%, 0);
+   --background-secondy-block: hsl(221, 100%, 96%);
+   --background: hsl(221, 100%, 96%);
+   --first-block-primary-font: hsl(0, 0%, 100%);
+   --secondary-font: hsl(241, 100%, 89%);
+   --second-block-primary-font: hsl(224, 30%, 27%);
+   --border-radius: 20px;
+   --padding-geral: 1rem;
+}
+
+* {
+   font-family: 'Hanken Grotesk', sans-serif;
+}
+
+body {
+   background: gray;
+   height: 100vh;
+}
+
+main {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+}
+
+.main-block {
+   display: flex;
+   justify-content: center;
+   background: var(--background-secondy-block);
+   border-radius: var(--border-radius);
+   width: 50%;
+}
+
+.results {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   gap: 0.7rem;
+   padding: 2rem;
+   background: linear-gradient(
+      to bottom,
+      var(--background-first-block),
+      var(--background-first-block-gradient)
+   );
+   text-align: center;
+   align-items: center;
+   border-radius: var(--padding-geral);
+}
+
+.results > div {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   background: var(--background-circle);
+   gap: 1rem;
+   padding: 1.5rem;
+   border-radius: 50%;
+}
+
+.results h4 {
+   color: var(--secondary-font);
+}
+
+/* start of summary */
+
+.summary {
+   background: var(--background-secondy-block);
+   border-radius: var(--border-radius);
+   width: 50%;
+   padding: var(--padding-geral);
+}
+
+.summary p {
+   margin: 0;
+}
