@@ -3,20 +3,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
 
 :root {
-   --first-element-summary: hsl(0, 100%, 67%);
-   --second-element-sumary: hsl(39, 100%, 56%);
-   --third-element-sumary: hsl(166, 100%, 37%);
-   --fourth-element-sumary: hsl(234, 85%, 45%);
+   --first-element-summary: hsla(0, 100%, 67%, 0.2);
+   --firts-text-summary: hsl(0, 100%, 67%);
+   --second-element-summary: hsla(39, 100%, 56%, 0.2);
+   --second-text-summary: hsl(39, 100%, 56%);
+   --third-element-summary: hsla(166, 100%, 37%, 0.2);
+   --third-text-summary: hsl(166, 100%, 37%);
+   --fourth-element-summary: hsla(234, 85%, 45%, 0.2);
+   --fourth-text-summary: hsl(234, 85%, 45%);
    --background-first-block: hsl(252, 100%, 67%);
-   --background-first-block-gradient: hsl(241, 81%, 54%);
+   --background-first-block-gradient: hsl(241, 72%, 46%);
    --background-circle: hsl(241, 81%, 54%);
-   --background-circle-button: hsla(241, 72%, 46%, 0);
+   --background-circle-button: hsl(224, 30%, 27%);
    --background-secondy-block: hsl(221, 100%, 96%);
    --background: hsl(221, 100%, 96%);
    --first-block-primary-font: hsl(0, 0%, 100%);
    --secondary-font: hsl(241, 100%, 89%);
    --second-block-primary-font: hsl(224, 30%, 27%);
    --border-radius: 20px;
+   --border-radius-elements: 15px;
    --padding-geral: 1rem;
 }
 
@@ -25,7 +30,7 @@
 }
 
 body {
-   background: gray;
+   background: var(--background);
    height: 100vh;
 }
 
@@ -39,9 +44,11 @@ main {
 .main-block {
    display: flex;
    justify-content: center;
-   background: var(--background-secondy-block);
+   background: var(--background);
    border-radius: var(--border-radius);
-   width: 50%;
+   max-width: 500px;
+   width: 90%;
+   box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.2);
 }
 
 .results {
@@ -49,7 +56,8 @@ main {
    flex-direction: column;
    justify-content: space-between;
    gap: 0.7rem;
-   padding: 2rem;
+   padding: 3.5rem;
+   width: 50%;
    background: linear-gradient(
       to bottom,
       var(--background-first-block),
@@ -60,29 +68,138 @@ main {
    border-radius: var(--padding-geral);
 }
 
+.results h4 {
+   color: var(--secondary-font);
+   font-size: 1rem;
+   font-weight: bold;
+   padding: 1rem;
+}
+
 .results > div {
    display: flex;
    flex-direction: column;
    justify-content: center;
    background: var(--background-circle);
-   gap: 1rem;
-   padding: 1.5rem;
+   gap: 0.3rem;
+   padding: 2.5rem;
    border-radius: 50%;
 }
 
-.results h4 {
+.results > div h2 {
+   color: var(--first-block-primary-font);
+   font-size: 3rem;
+   font-weight: bold;
+   width: 4rem;
+   padding: 0.2rem;
+}
+
+.results h3 {
+   color: var(--first-block-primary-font);
+   font-size: 1.5rem;
+   padding: 0.5rem 0;
+}
+
+.results p {
    color: var(--secondary-font);
+   font-size: 1rem;
 }
 
 /* start of summary */
 
 .summary {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   gap: 0.7rem;
+   padding: 3.5rem;
+   width: 50%;
    background: var(--background-secondy-block);
    border-radius: var(--border-radius);
-   width: 50%;
    padding: var(--padding-geral);
 }
 
-.summary p {
-   margin: 0;
+.summary > h2 {
+   display: flex;
+   color: var(--second-block-primary-font);
+   font-weight: bold;
+   display: flex;
+   flex-direction: column;
+   font-size: 1.5rem;
+}
+
+.card {
+   display: flex;
+   justify-content: space-between;
+   gap: 1.5rem;
+}
+
+.card__img-wrapper {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+}
+
+.card__numbers {
+   display: flex;
+   align-items: center;
+   gap: 0.3rem;
+}
+
+.card-first {
+   display: flex;
+   background: var(--first-element-summary);
+   border-radius: var(--border-radius-elements);
+   padding: 1rem;
+}
+
+.card-first p {
+   color: var(--firts-text-summary);
+}
+
+.card-second {
+   background: var(--second-element-summary);
+   border-radius: var(--border-radius-elements);
+   padding: 1rem;
+}
+
+.card-second p {
+   color: var(--second-text-summary);
+}
+
+.card-third {
+   background: var(--third-element-summary);
+   border-radius: var(--border-radius-elements);
+   padding: 1rem;
+}
+
+.card-third p {
+   color: var(--third-text-summary);
+}
+
+.card-fourth {
+   background: var(--fourth-element-summary);
+   border-radius: var(--border-radius-elements);
+   padding: 1rem;
+}
+
+.card-fourth p {
+   color: var(--fourth-text-summary);
+}
+
+.card__numbers {
+   font-weight: bold;
+   font-size: 0.9rem;
+}
+
+.secondary-font {
+   color: var(--second-block-primary-font);
+}
+
+.style-button {
+   background-color: var(--second-block-primary-font);
+   border-radius: 15px;
+   border: none;
+   color: var(--first-block-primary-font);
+   font-size: 1rem;
+   padding: 0.5rem;
 }
