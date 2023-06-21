@@ -200,16 +200,19 @@ main {
    color: var(--second-block-primary-font);
 }
 
-.style-button {
+.button {
    background-color: var(--second-block-primary-font);
    border-radius: 15px;
    border: none;
    color: var(--first-block-primary-font);
    font-size: 1rem;
    padding: 0.5rem;
+   transition: 0.5s all;
+   cursor: pointer;
 }
 
-.button :hover {
+.button:hover {
+   scale: 1.05;
 }
 
 @media (max-width: 768px) {
@@ -218,8 +221,8 @@ main {
    }
 
    .main-block {
+      display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
       width: 100%;
    }
@@ -227,7 +230,7 @@ main {
    .results {
       width: 100%;
       height: calc(100% - var(--summary-height));
-      padding: 1rem 0;
+      padding: 1.5rem 0;
       gap: 0;
       border-radius: unset unset 1rem 1rem;
    }
@@ -249,11 +252,24 @@ main {
 
    .results > div h2 {
       font-size: var(--font-size-width-media-query-H2);
-      width: cal(1rem + var(--font-size-width-media-query-H2));
+      width: calc(1rem + var(--font-size-width-media-query-H2));
    }
 
    .summary {
       height: var(--summary-height);
       width: 75%;
+      padding: 2rem 0;
+   }
+}
+
+@media (max-width: 484px) {
+   .results {
+      border-radius: 0 0 1rem 1rem;
+      padding: 3rem 0;
+   }
+
+   .main-block {
+      height: 100%;
+      border-radius: unset;
    }
 }
