@@ -4,7 +4,7 @@
 
 :root {
    --first-element-summary: hsla(0, 100%, 67%, 0.2);
-   --firts-text-summary: hsl(0, 100%, 67%);
+   --first-text-summary: hsl(0, 100%, 67%);
    --second-element-summary: hsla(39, 100%, 56%, 0.2);
    --second-text-summary: hsl(39, 100%, 56%);
    --third-element-summary: hsla(166, 100%, 37%, 0.2);
@@ -24,6 +24,7 @@
    --border-radius-elements: 15px;
    --padding-geral: 1rem;
    --summary-height: 60%;
+   --font-size-width-media-query-H2: 5rem;
 }
 
 * {
@@ -56,8 +57,8 @@ main {
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   gap: 0.7rem;
-   padding: 3.5rem;
+   gap: 1rem;
+   padding: 1rem 1.7rem 3rem;
    width: 50%;
    background: linear-gradient(
       to bottom,
@@ -66,12 +67,12 @@ main {
    );
    text-align: center;
    align-items: center;
-   border-radius: var(--padding-geral);
+   border-radius: var(--border-radius);
 }
 
-.results h4 {
+.results > h4 {
    color: var(--secondary-font);
-   font-size: 1rem;
+   font-size: 1.1rem;
    font-weight: bold;
    padding: 1rem;
 }
@@ -80,8 +81,12 @@ main {
    display: flex;
    flex-direction: column;
    justify-content: center;
-   background: var(--background-circle);
-   gap: 0.3rem;
+   align-items: center;
+   background: linear-gradient(
+      to bottom,
+      var(--background-first-block-gradient),
+      var(--background-first-block)
+   );
    padding: 2.5rem;
    border-radius: 50%;
 }
@@ -91,7 +96,7 @@ main {
    font-size: 3rem;
    font-weight: bold;
    width: 4rem;
-   padding: 0.2rem;
+   padding: 0.3rem;
 }
 
 .results h3 {
@@ -102,7 +107,7 @@ main {
 
 .results p {
    color: var(--secondary-font);
-   font-size: 1rem;
+   font-size: 0.9rem;
 }
 
 /* start of summary */
@@ -112,7 +117,6 @@ main {
    flex-direction: column;
    justify-content: space-around;
    gap: 0.7rem;
-   padding: 3.5rem;
    width: 50%;
    background: var(--background-secondy-block);
    border-radius: var(--border-radius);
@@ -150,17 +154,17 @@ main {
    display: flex;
    background: var(--first-element-summary);
    border-radius: var(--border-radius-elements);
-   padding: 1rem;
+   padding: var(--padding-geral);
 }
 
 .card-first p {
-   color: var(--firts-text-summary);
+   color: var(--first-text-summary);
 }
 
 .card-second {
    background: var(--second-element-summary);
    border-radius: var(--border-radius-elements);
-   padding: 1rem;
+   padding: var(--padding-geral);
 }
 
 .card-second p {
@@ -170,7 +174,7 @@ main {
 .card-third {
    background: var(--third-element-summary);
    border-radius: var(--border-radius-elements);
-   padding: 1rem;
+   padding: var(--padding-geral);
 }
 
 .card-third p {
@@ -180,7 +184,7 @@ main {
 .card-fourth {
    background: var(--fourth-element-summary);
    border-radius: var(--border-radius-elements);
-   padding: 1rem;
+   padding: var(--padding-geral);
 }
 
 .card-fourth p {
@@ -207,40 +211,48 @@ main {
 
 @media (max-width: 768px) {
    main {
-      width: 100%;
       height: 100%;
    }
 
    .main-block {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
       width: 100%;
       height: 100%;
-      border-radius: 0;
    }
 
    .results {
-      height: calc(100% - var(--summary-height));
       width: 100%;
-      padding: 0;
+      height: calc(100% - var(--summary-height));
+      padding: 1rem 0;
+      gap: 0;
+      border-radius: 0 0 1rem 1rem;
+   }
+
+   .results > h4 {
+      font-size: 1.6rem;
+   }
+
+   .results > div {
+      padding: 3rem;
+   }
+
+   .results > p {
+      display: flex;
+      padding-bottom: 1.5rem;
+      width: 60%;
+      font-size: 115%;
+   }
+
+   .results > div h2 {
+      font-size: var(--font-size-width-media-query-H2);
+      width: cal(1rem + var(--font-size-width-media-query-H2));
    }
 
    .summary {
       height: var(--summary-height);
-      width: 100%;
-      padding: 0;
-   }
-
-   .summary > h2 {
-      padding: 1rem;
-   }
-
-   .card {
-      padding: 1rem;
-   }
-
-   .summary > div {
-      padding: 1rem;
+      width: 75%;
    }
 }
