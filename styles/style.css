@@ -269,7 +269,6 @@ main {
    }
 
    .main-block {
-      height: 100%;
       border-radius: unset;
    }
 }
